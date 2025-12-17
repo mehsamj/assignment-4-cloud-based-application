@@ -1,0 +1,11 @@
+<div class="page">
+  <h1>Products</h1>
+  <p class="lead">Browse a few Everyday Market staples.</p>
+
+  <ul class="product-list">
+    <li *ngFor="let product of products">
+      <span class="product-name">{{ product.name }}</span>
+      <span class="product-price">{{ product.price }}</span>
+    </li>
+  </ul>
+</div>

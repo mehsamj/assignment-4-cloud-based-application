@@ -1,0 +1,156 @@
+<div class="page">
+  <h1>Register</h1>
+
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)" novalidate>
+    <div class="form-field">
+      <label for="name">Name:</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        [(ngModel)]="model.name"
+        required
+        appNameValidator
+        #nameCtrl="ngModel"
+        [class.invalid-input]="nameCtrl.invalid && nameCtrl.touched"
+        placeholder="Enter full name"
+      />
+      <div class="field-error" *ngIf="nameCtrl.invalid && nameCtrl.touched">
+        Name must be at least 5 letters and spaces only.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email address:</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        [(ngModel)]="model.email"
+        required
+        email
+        #emailCtrl="ngModel"
+        [class.invalid-input]="emailCtrl.invalid && emailCtrl.touched"
+        placeholder="name@example.com"
+      />
+      <div class="field-error" *ngIf="emailCtrl.invalid && emailCtrl.touched">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="phone">Phone number:</label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        inputmode="numeric"
+        [(ngModel)]="model.phone"
+        required
+        appPhoneValidator
+        #phoneCtrl="ngModel"
+        [class.invalid-input]="phoneCtrl.invalid && phoneCtrl.touched"
+        placeholder="10 digit number"
+      />
+      <div class="field-error" *ngIf="phoneCtrl.invalid && phoneCtrl.touched">
+        Phone number must be exactly 10 digits.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="dob">Date of birth:</label>
+      <input
+        id="dob"
+        name="dob"
+        type="date"
+        required
+        [(ngModel)]="model.dob"
+        #dobCtrl="ngModel"
+        [class.invalid-input]="dobCtrl.invalid && dobCtrl.touched"
+      />
+      <div class="field-error" *ngIf="dobCtrl.invalid && dobCtrl.touched">
+        Date of birth is required (yyyy-mm-dd).
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="street">Street address:</label>
+      <input
+        id="street"
+        name="street"
+        type="text"
+        [(ngModel)]="model.street"
+        required
+        appStreetValidator
+        #streetCtrl="ngModel"
+        [class.invalid-input]="streetCtrl.invalid && streetCtrl.touched"
+        placeholder="123 Market Street"
+      />
+      <div class="field-error" *ngIf="streetCtrl.invalid && streetCtrl.touched">
+        Street can include letters, numbers, and spaces only.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="province">Province:</label>
+      <select
+        id="province"
+        name="province"
+        [(ngModel)]="model.province"
+        required
+        appProvinceValidator
+        #provinceCtrl="ngModel"
+        [class.invalid-input]="provinceCtrl.invalid && provinceCtrl.touched"
+      >
+        <option value="" disabled>Select a province</option>
+        <option *ngFor="let province of provinces" [value]="province">
+          {{ province }}
+        </option>
+      </select>
+      <div class="field-error" *ngIf="provinceCtrl.invalid && provinceCtrl.touched">
+        Please select a Canadian province.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="country">Country:</label>
+      <select
+        id="country"
+        name="country"
+        [(ngModel)]="model.country"
+        required
+        appCountryValidator
+        #countryCtrl="ngModel"
+        [class.invalid-input]="countryCtrl.invalid && countryCtrl.touched"
+      >
+        <option value="" disabled>Select a country</option>
+        <option *ngFor="let country of countries" [value]="country">
+          {{ country }}
+        </option>
+      </select>
+      <div class="field-error" *ngIf="countryCtrl.invalid && countryCtrl.touched">
+        You must select Canada to continue.
+      </div>
+    </div>
+
+    <div class="form-field checkbox-field">
+      <label for="terms">
+        <input
+          id="terms"
+          name="terms"
+          type="checkbox"
+          [(ngModel)]="model.terms"
+          required
+          #termsCtrl="ngModel"
+          [class.invalid-input]="termsCtrl.invalid && termsCtrl.touched"
+        />
+        I accept the Terms & Conditions
+      </label>
+      <div class="field-error" *ngIf="termsCtrl.invalid && termsCtrl.touched">
+        Accepting the Terms & Conditions is required.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+  </form>
+</div>

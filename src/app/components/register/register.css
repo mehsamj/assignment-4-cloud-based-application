@@ -1,0 +1,11 @@
+input {
+  display: block;
+  margin-top: 5px;
+  padding: 6px;
+  width: 250px;
+}
+
+div {
+  color: red;
+  font-size: 14px;
+}

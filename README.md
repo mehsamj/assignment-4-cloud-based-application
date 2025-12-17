@@ -1,59 +1,34 @@
-# EverydayMarketRouting
+Everyday Market App Routing and Form Validation
+By Mehsim Jamani
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+Overview
+This project is an Angular application based on the Everyday Market App from Assignment 1. The goal of this assignment is to demonstrate routing using the Angular Router and to build a template driven form with client side validation.
 
-## Development server
+Assignment Requirements Implemented
 
-To start a local development server, run:
+• Routing is implemented using Angular Router
+• The default route redirects from / to /register
+• The Register page is part of the CoreModule
+• The Products page is part of the MarketModule
+• Navigation between pages works without page reload
+• A template driven registration form is used
+• Client side validation is applied to all required fields
+• Custom validator directives are used where needed
+• The Submit button remains disabled until the form is valid
+• On successful submission, the user is redirected to the Products page
 
-```bash
-ng serve
-```
+Pages
+• Register Page
+Contains a template driven form with validation for name, email, phone number, date of birth, address, province, country, and terms and conditions.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+• Products Page
+Displays the Everyday Market products and is accessible after form submission or through routing.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+How to Run
+• Open the project folder in VS Code
+• Open the integrated terminal
+• Run npm install
+• Run ng serve
+• Open a browser and go to http://localhost:4200

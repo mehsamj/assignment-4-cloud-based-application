@@ -1,0 +1,70 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #b0b0b0;
+  border-radius: 6px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #276ef1;
+  box-shadow: 0 0 0 3px rgba(39, 110, 241, 0.15);
+}
+
+.invalid-input {
+  border-color: #c62828;
+}
+
+.field-error {
+  color: #c62828;
+  font-size: 14px;
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-field input.invalid-input {
+  outline: 2px solid #c62828;
+}
+
+button[type='submit'] {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #276ef1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button[disabled] {
+  background: #9ea7b8;
+  cursor: not-allowed;
+}
+
+button[type='submit']:not([disabled]):hover {
+  background: #1746b3;
+}
