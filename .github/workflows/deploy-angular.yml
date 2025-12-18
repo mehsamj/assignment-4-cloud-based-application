@@ -32,3 +32,4 @@ jobs:
           app_location: "/"
           api_location: ""
           app_artifact_location: "dist/everyday-market-routing"
+          skip_app_build: true
