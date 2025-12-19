@@ -1,32 +1,44 @@
-Everyday Market App Routing and Form Validation
+Everyday Market Cloud-Based Application Deployment
 By Mehsim Jamani
 
 Overview
-This project is an Angular application based on the Everyday Market App from Assignment 1. The goal of this assignment is to demonstrate routing using the Angular Router and to build a template driven form with client side validation.
+This project is an Angular application based on the Everyday Market App from previous assignments. The goal of Assignment 4 is to deploy the application to the cloud using Azure Static Web Apps and demonstrate continuous integration and continuous deployment using GitHub Actions.
 
 Assignment Requirements Implemented
 
-• Routing is implemented using Angular Router
-• The default route redirects from / to /register
-• The Register page is part of the CoreModule
-• The Products page is part of the MarketModule
-• Navigation between pages works without page reload
-• A template driven registration form is used
-• Client side validation is applied to all required fields
-• Custom validator directives are used where needed
-• The Submit button remains disabled until the form is valid
-• On successful submission, the user is redirected to the Products page
+• Angular application is hosted on Azure Static Web Apps
+• Application is publicly accessible through an Azure Static Web App URL
+• GitHub repository is connected to Azure Static Web Apps
+• Continuous Integration is implemented using GitHub Actions
+• Continuous Deployment is triggered automatically on push to the main branch
+• Successful build and deployment runs are visible in GitHub Actions
+• The deployed application loads correctly in the browser
+• Client side routing works correctly in the deployed environment
+• Form validation continues to function after deployment
 
-Pages
+Application Features
+
 • Register Page
-Contains a template driven form with validation for name, email, phone number, date of birth, address, province, country, and terms and conditions.
+Contains a template driven registration form with client side validation for name, email, phone number, date of birth, address, province, country, and terms and conditions.
 
 • Products Page
-Displays the Everyday Market products and is accessible after form submission or through routing.
+Displays the Everyday Market products and is accessible through routing after successful form submission or direct navigation.
 
+Deployment Details
 
+• Cloud Platform: Azure Static Web Apps
+• Source Control: GitHub
+• CI/CD Tool: GitHub Actions
+• Deployment Branch: main
 
-How to Run
+Live Application
+https://yellow-bay-0ce6e320f.3.azurestaticapps.net
+
+GitHub Repository
+https://github.com/mehsamj/assignment-4-cloud-based-application
+
+How to Run Locally
+
 • Open the project folder in VS Code
 • Open the integrated terminal
 • Run npm install
